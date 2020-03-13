@@ -41,7 +41,7 @@
 
 # CMake
 cmake-build-*/
-
+local.properties
 # Mongo Explorer plugin
 .idea/**/mongoSettings.xml
 
