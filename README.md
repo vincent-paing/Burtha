@@ -1,3 +1,5 @@
+ [ ![Download](https://api.bintray.com/packages/vincent-paing/maven/burtha/images/download.svg) ](https://bintray.com/vincent-paing/maven/burtha/_latestVersion) [![Build Status](https://api.travis-ci.com/vincent-paing/burtha.svg?branch=master)](https://travis-ci.com/vincent-paing/burtha)
+
 # Burtha
 
 Burtha, stands for Burmese-Pyi-Thar (ဗမာပြည်သား) meaning, a member of Burma Country. Burtha is a Burmese National Registration Card(NRC) tool written in Kotlin.
@@ -16,7 +18,21 @@ NationalRegistrationCardFormatLanguageConverter.convertToEnglishFormat(input)
 
 #### Gradle
 
-*TBA*
+If you use gradle, add this repository first 
+
+```groovy 
+repositories {
+	maven { url "https://dl.bintray.com/vincent-paing/maven" } 
+} 
+```
+
+Then add the following dependencies:
+
+```groovy
+dependencies {
+  implementation 'com.aungkyawpaing.burtha:burtha-kt:1.0.0'
+}
+```
 
 
 ## Features
