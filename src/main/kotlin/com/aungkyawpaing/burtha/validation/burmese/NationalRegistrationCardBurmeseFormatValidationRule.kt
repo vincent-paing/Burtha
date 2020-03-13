@@ -2,7 +2,7 @@ package com.aungkyawpaing.burtha.validation.burmese
 
 import com.aungkyawpaing.burtha.validation.ValidationRule
 
-intenral class NationalRegistrationCardBurmeseFormatValidationRule : ValidationRule {
+internal class NationalRegistrationCardBurmeseFormatValidationRule : ValidationRule {
 
   companion object {
 
