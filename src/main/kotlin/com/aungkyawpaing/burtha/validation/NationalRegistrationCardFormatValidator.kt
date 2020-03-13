@@ -40,18 +40,20 @@ class NationalRegistrationCardFormatValidator constructor(
 
   fun validateFormat(formatString: String): Boolean {
 
-    validationRules.forEach {
-      val isValid = it.validate(formatString)
+    val validationResults = validationRules.map {
+      it.validate(formatString)
+    }
 
-      if (isValid && validateMode == ValidateMode.OR) {
-        return true
-      } else if (!isValid && validateMode == ValidateMode.AND) {
-        return false
+    return when (validateMode) {
+      ValidateMode.AND -> {
+        return !validationResults.contains(false)
+      }
+      ValidateMode.OR -> {
+        return validationResults.contains(true)
       }
 
     }
 
-    return true
   }
 
 }

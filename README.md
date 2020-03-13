@@ -30,10 +30,9 @@ Then add the following dependencies:
 
 ```groovy
 dependencies {
-  implementation 'com.aungkyawpaing.burtha:burtha-kt:1.0.0'
+  implementation 'com.aungkyawpaing.burtha:burtha-kt:1.0.1'
 }
 ```
-
 
 ## Features
 
