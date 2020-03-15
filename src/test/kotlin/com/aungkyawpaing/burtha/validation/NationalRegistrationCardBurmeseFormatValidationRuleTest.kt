@@ -88,6 +88,65 @@ class NationalRegistrationCardBurmeseFormatValidationRuleTest {
     Assert.assertEquals(expected, actual)
   }
 
+  @Test
+  fun testValidAssociateCitizen() {
+    //ဧည့်နိုင်ငံသား
+    val input = "၁၂/မရက(ဧည့်)၁၂၃၄၅၆"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testValidNaturalizedCitizen() {
+    //နိုင်ငံသားပြုခွင့်ရသူ
+    val input = "၁၂/မရက(ပြု)၁၂၃၄၅၆"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testValidNationalVerification() {
+    //နိုင်ငံသားစိစစ်ခံမည့်သူ
+    val input = "၁၂/မရက(စ)၁၂၃၄၅၆"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testValidMonk() {
+    //သာသနာဝင်
+    val input = "၁၂/မရက(သ)၁၂၃၄၅၆"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testValidNun() {
+    //သာသနွယ်ဝွင်
+    val input = "၁၂/မရက(သီ)၁၂၃၄၅၆"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
 
 
 }

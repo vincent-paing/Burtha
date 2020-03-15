@@ -23,7 +23,7 @@ class NationalRegistrationCardEnglishFormatValidationRuleTest {
 
   @Test
   fun testInvalidStateIndex() {
-    val input = "16/MaYaKa(N)123456"
+    val input = "16/MaYaKa(C)123456"
 
     val expected = false
 
@@ -35,7 +35,7 @@ class NationalRegistrationCardEnglishFormatValidationRuleTest {
 
   @Test
   fun testInvalidMissingStateIndex() {
-    val input = "MaYaKa(N)123456"
+    val input = "MaYaKa(C)123456"
 
     val expected = false
 
@@ -47,7 +47,7 @@ class NationalRegistrationCardEnglishFormatValidationRuleTest {
 
   @Test
   fun testInvalidTownCodeOne() {
-    val input = "12/MeYaKa(N)123456"
+    val input = "12/MeYaKa(C)123456"
 
     val expected = false
 
@@ -59,7 +59,7 @@ class NationalRegistrationCardEnglishFormatValidationRuleTest {
 
   @Test
   fun testInvalidTownCodeTwo() {
-    val input = "12/MaKa(N)123456"
+    val input = "12/MaKa(C)123456"
 
     val expected = false
 
@@ -71,7 +71,7 @@ class NationalRegistrationCardEnglishFormatValidationRuleTest {
 
   @Test
   fun testMissingTownCode() {
-    val input = "12/(N)123456"
+    val input = "12/(C)123456"
 
     val expected = false
 
@@ -83,7 +83,7 @@ class NationalRegistrationCardEnglishFormatValidationRuleTest {
 
   @Test
   fun testInvalidNumber() {
-    val input = "12/MaYaKa(N)123"
+    val input = "12/MaYaKa(C)123"
 
     val expected = false
 
@@ -95,7 +95,7 @@ class NationalRegistrationCardEnglishFormatValidationRuleTest {
 
   @Test
   fun testInvalidNumberTwo() {
-    val input = "12/MaYaKa(N)12345678"
+    val input = "12/MaYaKa(C)12345678"
 
     val expected = false
 
@@ -104,6 +104,67 @@ class NationalRegistrationCardEnglishFormatValidationRuleTest {
     Assert.assertEquals(expected, actual)
 
   }
+
+  @Test
+  fun testValidAssociateCitizen() {
+    //ဧည့်နိုင်ငံသား
+    val input = "12/MaYaKa(AC)123456"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testValidNaturalizedCitizen() {
+    //နိုင်ငံသားပြုခွင့်ရသူ
+    val input = "12/MaYaKa(NC)123456"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testValidNationalVerification() {
+    //နိုင်ငံသားစိစစ်ခံမည့်သူ
+    val input =  "12/MaYaKa(V)123456"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testValidMonk() {
+    //သာသနာဝင်
+    val input = "12/MaYaKa(M)123456"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testValidNun() {
+    //သာသနွယ်ဝွင်
+    val input = "12/MaYaKa(N)123456"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
 
 
 

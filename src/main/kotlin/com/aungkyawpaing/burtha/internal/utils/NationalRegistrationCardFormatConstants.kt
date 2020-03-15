@@ -5,7 +5,7 @@ internal object NationalRegistrationCardFormatConstants {
   /**
    * References: https://github.com/greenlikeorange/NRCPrefix/blob/master/index.js#L36
    */
-  val MYANMAR_TOWN_CODE_TO_ENGLISH_TOWN_CODE_MAP = mapOf<String, String>(
+  val BURMESE_TOWN_CODE_TO_ENGLISH_TOWN_CODE_MAP = mapOf<String, String>(
     "က" to "Ka",
     "ခ" to "Kh",
     "ဂ" to "Ga",
@@ -39,7 +39,7 @@ internal object NationalRegistrationCardFormatConstants {
     "ဧ" to "E"
   )
 
-  val ENGLISH_TOWN_CODE_TO_MYANMAR_TOWN_CODE_MAP = mapOf<String, String>(
+  val ENGLISH_TOWN_CODE_TO_BURMESE_TOWN_CODE_MAP = mapOf<String, String>(
     "Ka" to "က",
     "Kh" to "ခ",
     "Ga" to "ဂ",
@@ -71,6 +71,25 @@ internal object NationalRegistrationCardFormatConstants {
     "Ll" to "ဠ",
     "U" to "ဥ",
     "E" to "ဧ"
+  )
+
+  //Reference : https://www.facebook.com/ZawThureinTun/posts/2516338305050217?hc_location=ufi
+  val BURMESE_CARD_TYPE_TO_ENGLISH_CARD_TYPE_MAP = mapOf<String, String>(
+    "နိုင်" to "C",
+    "ဧည့်" to "AC",
+    "ပြု" to "NC",
+    "စ" to "V",
+    "သ" to "M",
+    "သီ" to "N"
+  )
+
+  val ENGLISH_CARD_TYPE_TO_BURMESE_CARD_TYPE_MAP = mapOf<String, String>(
+    "C" to "နိုင်",
+    "AC" to "ဧည့်",
+    "NC" to "ပြု",
+    "V" to "စ",
+    "M" to "သ",
+    "N" to "သီ"
   )
 }
 
