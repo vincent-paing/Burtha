@@ -18,9 +18,12 @@ object NationalRegistrationCardFormatLanguageConverter {
   fun convertToEnglishFormat(burmeseFormat: String): String {
     var englishFormat = burmeseFormat
 
-    englishFormat = englishFormat.replace("(နိုင်)", "(N)")
+    NationalRegistrationCardFormatConstants.BURMESE_CARD_TYPE_TO_ENGLISH_CARD_TYPE_MAP.forEach { (key, value) ->
+      englishFormat = englishFormat.replace("($key)", "($value)")
+    }
 
-    NationalRegistrationCardFormatConstants.MYANMAR_TOWN_CODE_TO_ENGLISH_TOWN_CODE_MAP.forEach { (key, value) ->
+
+    NationalRegistrationCardFormatConstants.BURMESE_TOWN_CODE_TO_ENGLISH_TOWN_CODE_MAP.forEach { (key, value) ->
       englishFormat = englishFormat.replace(key, value)
     }
 
@@ -43,9 +46,11 @@ object NationalRegistrationCardFormatLanguageConverter {
   fun convertToBurmeseFormat(englishFormat: String): String {
     var burmeseFormat = englishFormat
 
-    burmeseFormat = burmeseFormat.replace("(N)", "(နိုင်)")
+    NationalRegistrationCardFormatConstants.ENGLISH_CARD_TYPE_TO_BURMESE_CARD_TYPE_MAP.forEach { (key, value) ->
+      burmeseFormat = burmeseFormat.replace("($key)", "($value)")
+    }
 
-    NationalRegistrationCardFormatConstants.ENGLISH_TOWN_CODE_TO_MYANMAR_TOWN_CODE_MAP.forEach { (key, value) ->
+    NationalRegistrationCardFormatConstants.ENGLISH_TOWN_CODE_TO_BURMESE_TOWN_CODE_MAP.forEach { (key, value) ->
       burmeseFormat = burmeseFormat.replace(key, value)
     }
 
