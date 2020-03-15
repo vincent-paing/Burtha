@@ -9,8 +9,19 @@ Burtha, stands for Burmese-Pyi-Thar (ဗမာပြည်သား) meaning, a 
 val input = "၁၂/မရက(နိုင်)၁၂၃၄၅၆"
 NationalRegistrationCardFormatLanguageConverter.convertToEnglishFormat(input) 
 
-//Output: "12/MaRaKa(N)123456"
+//Output: "12/MaRaKa(C)123456"
 ```
+
+Burtha supports all NRC types with the following pattern
+
+| Burmese               | English
+| ----------------------|-------------
+| နိုင်ငံသား (နိုင်)           | Citizen (C)
+| ဧည့်နိုင်ငံသား (ဧည့်)       | Associate Citizen (AC)  
+| နိုင်ငံသားပြုခွင့်ရသူ (ပြု)     | Naturalized Citizen (NC) 
+| နိုင်ငံသားပြုစီစစ်ခံရမည့်သူ (စ) | National Verification (V)
+| သာသနာဝင် (သ)         | Monk (M)
+| သာသနာနွယ်ဝင် (သီ)       | Nun (N)
 
 ## Getting Started
 
@@ -22,7 +33,7 @@ If you use gradle, add this repository first
 
 ```groovy 
 repositories {
-	maven { url "https://dl.bintray.com/vincent-paing/maven" } 
+  maven { url "https://dl.bintray.com/vincent-paing/maven" } 
 } 
 ```
 
@@ -39,12 +50,13 @@ dependencies {
 
 ### Validation
 
-`NationalRegistrationCardFormatValidator.validateFormat` provides easy way to validate a format. It accepts `String` and returns `true` if it's a valid NRC format.
+`NationalRegistrationCardFormatValidator.validateFormat` provides a method to validate a format. It accepts `String` and returns `true` if it's a valid NRC format.
 
 ```kotlin
 val validator = NationalRegistrationCardFormatValidator()
-val input = "၁၂/မရက(နိုင်)၁၂၃၄၅၆
-val result = NationalRegistrationCardFormatValidator.validate(input) //true
+val input = "၁၂/မရက(နိုင်)၁၂၃၄၅၆"
+val result = NationalRegistrationCardFormatValidator.validate(input)
+//result : true
 ```
 
 #### Configuration
@@ -59,18 +71,18 @@ Validator is made out of multiple `ValidationRule`, where each rule confirm whet
 
 Validate Mode provides either you can check with `AND` mode or `OR` mode. 
 
-- In `AND` mode, all rules have to pass for the `String` to be a valid format.
-- In `OR` mode, passing any one of the rules provided will allow the `String` to be a valid format. By default, `OR` method is used to check either Burmese or English format.
+- In `AND` mode, the validator returns `true` **if and only if** all rules returns `true`
+- In `OR` mode, the validator returns `true` as soon as **one of the rules** returns `true`. By default, `OR` method is used to check both Burmese or English format.
 
 With the combination of `Rule` and `Mode`, you can come up with any validation method you want, such as all caps English NRC, combination of both English and Burmese... etc.
 
 
 ### Conversion
 
-Burtha also provide a Burmese <=> English Conversion.
+Burtha also provide a Burmese to English Conversion, vice versa.
 
 ```kotlin
-val input = "12/MaRaKa(N)123456"
+val input = "12/MaRaKa(C)123456"
 NationalRegistrationCardFormatLanguageConverter.convertToBurmeseFormat(input) 
 
 //Output: "၁၂/မရက(နိုင်)၁၂၃၄၅၆" 
@@ -80,7 +92,7 @@ Currently, Burtha doesn't provide configurations for Conversion **yet**.
 
 ## Contribution
 
-You are more than welcomed to contribute to development of Burtha. If you're new to Open source software,s you can start by 
+You are more than welcomed to contribute to development of Burtha. If you're new to Open source softwares, you can start by 
 
 - Suggesting new issues, and feature requests
 - Commenting your thoughts on existing issues
