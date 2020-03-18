@@ -15,7 +15,7 @@ internal class NationalRegistrationCardEnglishFormatValidationRule : ValidationR
   }
 
   private val regexExpression =
-    Regex("^^([1-2]?[1-4])/(?:${POSSIBLE_ENGLISH_CHARACTER}){3}\\((?:C|AC|NC|V|M|N)\\)([\\d]{6})\$")
+    Regex("^([1-2]?[1-4]|[1-9])/(?:${POSSIBLE_ENGLISH_CHARACTER}){3}\\((?:C|AC|NC|V|M|N)\\)([\\d]{6})\$")
 
   override fun validate(valueInString: String): Boolean {
     val matchResult = regexExpression.matchEntire(valueInString)
