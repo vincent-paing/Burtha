@@ -6,7 +6,7 @@ internal class NationalRegistrationCardBurmeseFormatValidationRule : ValidationR
 
 
   private val regexExpression =
-    Regex("^([၁-၂]?[၁-၄])/([ကခဂဃငစဆဇဈညဎဏတထဒဓနပဖဗဘမယရလဝသဟဠဥဧ]{3})\\((?:နိုင်|ဧည့်|ပြု|စ|သ|သီ)\\)([၀-၉]{6})")
+    Regex("^([၁-၂][၁-၄]|[၁-၉])/([ကခဂဃငစဆဇဈညဎဏတထဒဓနပဖဗဘမယရလဝသဟဠဥဧ]{3})\\((?:နိုင်|ဧည့်|ပြု|စ|သ|သီ)\\)([၀-၉]{6})")
 
   override fun validate(valueInString: String): Boolean {
     val matchResult = regexExpression.matchEntire(valueInString)

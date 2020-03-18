@@ -20,6 +20,18 @@ class NationalRegistrationCardBurmeseFormatValidationRuleTest {
 
   }
 
+  @Test
+  fun testValidFormatTwo() {
+    val input = "၅/မရက(နိုင်)၁၂၃၄၅၆"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+
+  }
+
 
   @Test
   fun testIncompleteFormat() {
