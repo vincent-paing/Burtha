@@ -160,5 +160,17 @@ class NationalRegistrationCardBurmeseFormatValidationRuleTest {
     Assert.assertEquals(expected, actual)
   }
 
+  @Test
+  fun testBaAhNa() {
+    //သာသနွယ်ဝွင်
+    val input = "၁၂/ဘအန(သီ)၁၂၃၄၅၆"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
 
 }
