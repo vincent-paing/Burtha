@@ -36,7 +36,8 @@ internal object NationalRegistrationCardFormatConstants {
     "ဟ" to "Ha",
     "ဠ" to "Ll",
     "ဥ" to "U",
-    "ဧ" to "E"
+    "ဧ" to "E",
+    "အ" to "Ah"
   )
 
   val ENGLISH_TOWN_CODE_TO_BURMESE_TOWN_CODE_MAP = mapOf<String, String>(
@@ -70,7 +71,8 @@ internal object NationalRegistrationCardFormatConstants {
     "Ha" to "ဟ",
     "Ll" to "ဠ",
     "U" to "ဥ",
-    "E" to "ဧ"
+    "E" to "ဧ",
+    "Ah" to "အ"
   )
 
   //Reference : https://www.facebook.com/ZawThureinTun/posts/2516338305050217?hc_location=ufi
