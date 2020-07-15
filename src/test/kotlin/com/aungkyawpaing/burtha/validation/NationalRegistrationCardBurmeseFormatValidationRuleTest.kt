@@ -10,7 +10,7 @@ class NationalRegistrationCardBurmeseFormatValidationRuleTest {
 
   @Test
   fun testValidFormat() {
-    val input = "၁၂/မရက(နိုင်)၁၂၃၄၅၆"
+    val input = "၁၀/မရက(နိုင်)၁၂၃၄၅၆"
 
     val expected = true
 
