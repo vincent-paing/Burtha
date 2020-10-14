@@ -41,7 +41,7 @@ Then add the following dependencies:
 
 ```groovy
 dependencies {
-  implementation 'com.aungkyawpaing.burtha:burtha-kt:1.1.2'
+  implementation 'com.aungkyawpaing.burtha:burtha-kt:1.1.3'
 }
 ```
 
