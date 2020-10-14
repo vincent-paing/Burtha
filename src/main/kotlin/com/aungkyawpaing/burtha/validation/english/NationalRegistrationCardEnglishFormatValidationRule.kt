@@ -10,7 +10,7 @@ internal class NationalRegistrationCardEnglishFormatValidationRule : ValidationR
     //But we use small letters for second character so we can process data easily
     //If needed, maybe we can change to all caps in future
     private const val POSSIBLE_ENGLISH_CHARACTER =
-      "Ka|Kh|Ga|Gh|Ng|Ca|Ch|Ja|Jh|Ny|Dd|Nn|Ta|Th|Da|Dh|Na|Pa|Ph|Ba|Bh|Ma|Ya|Ra|La|Wa|Sa|Ha|Ll|u|E"
+      "Ka|Kh|Ga|Gh|Ng|Ca|Ch|Ja|Jh|Ny|Dd|Nn|Ta|Th|Da|Dh|Na|Pa|Ph|Ba|Bh|Ma|Ya|Ra|La|Wa|Sa|Ha|Ll|u|E|Ah"
 
   }
 

@@ -10,7 +10,7 @@ class NationalRegistrationCardBurmeseFormatValidationRuleTest {
 
   @Test
   fun testValidFormat() {
-    val input = "၁၂/မရက(နိုင်)၁၂၃၄၅၆"
+    val input = "၁၀/မရက(နိုင်)၁၂၃၄၅၆"
 
     val expected = true
 
@@ -152,6 +152,18 @@ class NationalRegistrationCardBurmeseFormatValidationRuleTest {
   fun testValidNun() {
     //သာသနွယ်ဝွင်
     val input = "၁၂/မရက(သီ)၁၂၃၄၅၆"
+
+    val expected = true
+
+    val actual = rule.validate(input)
+
+    Assert.assertEquals(expected, actual)
+  }
+
+  @Test
+  fun testBaAhNa() {
+    //သာသနွယ်ဝွင်
+    val input = "၁၂/ဘအန(သီ)၁၂၃၄၅၆"
 
     val expected = true
 
