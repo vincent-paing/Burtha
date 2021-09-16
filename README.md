@@ -31,22 +31,17 @@ Burtha supports all NRC types with the following pattern
 
 If you use gradle, add this repository first 
 
-```groovy 
+```gradle 
 repositories {
-  maven { url "https://dl.bintray.com/vincent-paing/maven" } 
+  mavenCentral()
 } 
-```
 
-Then add the following dependencies:
-
-```groovy
 dependencies {
-  implementation 'com.aungkyawpaing.burtha:burtha-kt:1.1.3'
+  implementation 'dev.aungkyawpaing.burtha:burtha-kt:1.1.4'
 }
 ```
 
 ## Features
-
 
 ### Validation
 
@@ -98,7 +93,7 @@ You are more than welcomed to contribute to development of Burtha. If you're new
 - Commenting your thoughts on existing issues
 - Using the library yourself
 
-## Licenese
+## License
 
 ```
 Copyright 2020 Aung Kyaw Paing
